@@ -1,0 +1,46 @@
+/** @format */
+
+.LogIn_mainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0 auto;
+}
+.LogIn_button {
+  width: 20%;
+  height: 2.8rem;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-size: 1.1rem;
+  border: 1px solid grey;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.LogIn_ImgDiv {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  width: 45%;
+}
+
+.Cards_Div {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem;
+  justify-content: start;
+}
+.rating_Div {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: baseline;
+  padding: 0 !important;
+}
+.LogIn_ArtistSearch {
+  display: flex;
+  flex-direction: column;
+}

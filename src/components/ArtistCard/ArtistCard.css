@@ -1,0 +1,9 @@
+/** @format */
+
+.ArtistCard_Container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: center;
+}

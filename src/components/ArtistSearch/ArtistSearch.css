@@ -1,0 +1,27 @@
+/** @format */
+.ArtistSearch_Container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.ArtistSearch_SearchInput {
+  padding: 0.7rem;
+  text-align: center;
+  width: 35%;
+  border-radius: 0.2rem;
+  border: 1px solid grey;
+}
+.ArtistSearch_MainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex-direction: column;
+  width: 100%;
+}
+@media only screen and (max-width: 780px) {
+  .ArtistSearch_SearchInput {
+    width: 50%;
+  }
+}
