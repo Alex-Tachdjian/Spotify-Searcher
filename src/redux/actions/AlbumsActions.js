@@ -20,7 +20,6 @@ export const getAlbums = (id) => async (dispatch) => {
     );
     dispatch(albumsActions.fetchAlbumsSuccess(response.data.items));
   } catch (error) {
-    console.log(error);
     dispatch(albumsActions.fetchAlbumsFail());
   }
 };
