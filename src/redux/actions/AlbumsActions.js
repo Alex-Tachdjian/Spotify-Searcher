@@ -2,8 +2,9 @@
 
 import axios from "axios";
 import { albumsActions } from "../reducers/AlbumsReducer";
-const token = localStorage.getItem("token");
+const token = sessionStorage.getItem("token");
 export const getAlbums = (id) => async (dispatch) => {
+  const token = sessionStorage.getItem("token");
   dispatch(albumsActions.fetchAlbumsRequest());
   try {
     let response = await axios.get(
