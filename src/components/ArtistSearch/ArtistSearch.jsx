@@ -5,7 +5,7 @@ import "./ArtistSearch.css";
 import SearchIcon from "@mui/icons-material/Search";
 import axios from "axios";
 import ArtistCard from "../ArtistCard/ArtistCard";
-import { getArtits } from "../../redux/actions/ArtistsActions";
+import { getArtits, resetArtists } from "../../redux/actions/ArtistsActions";
 import { useDispatch } from "react-redux";
 import AlbumCard from "../AlbumCard/AlbumCard";
 
@@ -30,17 +30,27 @@ function ArtistSearch() {
           }
         }}
         onChange={(e) => {
-          setSearchValue(e.target.value);
+          if (e.target.value != "") {
+            setTimeout(() => {
+              dispatch(getArtits(e.target.value));
+              setSearchValue(e.target.value);
+            }, 2000);
+            console.log(e.target.value);
+            setSearchValue(e.target.value);
+          } else {
+            dispatch(resetArtists());
+          }
+          clearTimeout();
         }}
       />
 
       {clicked && (
-        <div>
+        <div style={{ width: "100%" }}>
           <AlbumCard />
         </div>
       )}
       {!clicked && (
-        <div>
+        <div style={{ width: "100%" }}>
           <ArtistCard searchValue={searchValue} setClicked={setClicked} />
         </div>
       )}

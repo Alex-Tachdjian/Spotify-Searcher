@@ -28,21 +28,11 @@ const artistsSlice = createSlice({
       state.artists = [];
       state.error = action.payload;
     },
-    // fetchAlbumsRequest(state) {
-    //   state.loading = true;
-    //   state.albums = [];
-    //   state.error = "";
-    // },
-    // fetchAlbumsSuccess(state, action) {
-    //   state.loading = false;
-    //   state.albums = action.payload;
-    //   state.error = "";
-    // },
-    // fetchAlbumsFail(state, action) {
-    //   state.loading = false;
-    //   state.albums = [];
-    //   state.error = action.payload;
-    // },
+    reset(state) {
+      state.loading = false;
+      state.artists = [];
+      state.error = "";
+    },
   },
 });
 export const ArtistsReducer = artistsSlice.reducer;

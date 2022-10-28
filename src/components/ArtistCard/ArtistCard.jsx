@@ -17,12 +17,6 @@ import { getAlbums } from "../../redux/actions/AlbumsActions";
 function ArtistCard({ searchValue, setClicked }) {
   const dispatch = useDispatch();
   const retreivedArtists = useSelector((store) => store.ArtistsReducer.artists);
-  const retreiveAlbums = () => {
-    retreivedArtists.map((artistss, index) => {
-      let ArtistId = artistss.id;
-      dispatch(getAlbums(ArtistId));
-    });
-  };
 
   /////////
   return (
@@ -42,9 +36,10 @@ function ArtistCard({ searchValue, setClicked }) {
               minWidth: "10rem",
             }}
             onClick={() => {
-              retreiveAlbums();
+              // retreiveAlbums(i);
               // <AlbumCard displayAlbums={retreiveAlbums()} />;
               setClicked(true);
+              dispatch(getAlbums(artist.id));
             }}
           >
             {artist.images[1]?.url != undefined ? (

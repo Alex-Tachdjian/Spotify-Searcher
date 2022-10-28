@@ -24,3 +24,7 @@ export const getArtits = (searchValue) => async (dispatch) => {
     dispatch(artistsActions.fetchArtistsFail());
   }
 };
+
+export const resetArtists = () => async (dispatch) => {
+  dispatch(artistsActions.reset());
+};

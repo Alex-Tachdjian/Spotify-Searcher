@@ -47,9 +47,7 @@ function LogIn() {
       const { access_token, expires_in, token_type } = decodeURLAfterLogIn(
         window.location.hash
       );
-
       sessionStorage.setItem("token", access_token);
-      console.log(access_token);
     }
   }, []);
   token = sessionStorage.getItem("token");

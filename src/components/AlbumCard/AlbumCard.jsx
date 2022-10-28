@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom";
 function AlbumCard(displayAlbums) {
   const retreivedAlbums = useSelector((store) => store.AlbumsReducer.albums);
   const openInNewTab = (url) => {
-    window.open(url, "_blank");
+    window.open(url);
   };
 
   return (
@@ -121,7 +121,7 @@ function AlbumCard(displayAlbums) {
                 }}
                 size="small"
                 onClick={() => {
-                  openInNewTab(album.uri);
+                  openInNewTab(album.external_urls.spotify);
                 }}
               >
                 Preview on Spotify
