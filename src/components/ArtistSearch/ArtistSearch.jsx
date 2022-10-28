@@ -16,6 +16,7 @@ function ArtistSearch() {
     setClicked(false);
     dispatch(getArtits(searchValue));
   };
+  let timer;
 
   const dispatch = useDispatch();
   return (
@@ -28,19 +29,22 @@ function ArtistSearch() {
           if (e.key == "Enter") {
             searchOnEnter();
           }
+          if (timer != null) {
+            clearTimeout(timer);
+          }
         }}
-        onChange={(e) => {
+        onKeyUp={(e) => {
+          clearTimeout(timer);
           if (e.target.value != "") {
-            setTimeout(() => {
+            timer = setTimeout(() => {
               dispatch(getArtits(e.target.value));
               setSearchValue(e.target.value);
-            }, 2000);
-            console.log(e.target.value);
+            }, 5000);
+
             setSearchValue(e.target.value);
           } else {
             dispatch(resetArtists());
           }
-          clearTimeout();
         }}
       />
 
