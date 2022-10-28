@@ -48,13 +48,14 @@ function LogIn() {
         window.location.hash
       );
 
-      localStorage.setItem("token", access_token);
+      sessionStorage.setItem("token", access_token);
+      console.log(access_token);
     }
   }, []);
-  token = localStorage.getItem("token");
+  token = sessionStorage.getItem("token");
   useEffect(() => {
     if (!window.location.hash) {
-      localStorage.clear();
+      sessionStorage.clear();
     }
   });
   //UseStates
